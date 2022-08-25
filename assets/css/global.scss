@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+@import "partials/colors";
+
+body {
+  width: 100%;
+  // height: 100vh;
+}
+
+$container-xl: 1440px;
+$container-l: 1220px;
+$container-m: 960px;
+$container-s: 540px;
+
+.container {
+  width: 100%;
+  max-width: $container-l;
+  margin: 0 auto;
+
+  // &::after{
+  //   content: '';
+  //   display: table;
+  //   clear: both;
+  // }
+
+  display: flex;
+
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+  }
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $black-light;
+}
+
+li {
+  list-style: none;
+}
+
+.section-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 120%;
+  color: $black-dark;
+}
+
+.section-title-image{
+  max-width: 38px
+}
+
+.icon {
+  width: 61px;
+  height: 84px;
+  background-color: $primary-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import "partials/mixins";
+@import "partials/typography";
+@import "partials/layout";
+@import "partials/buttons";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/animations";

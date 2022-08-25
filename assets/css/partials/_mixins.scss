@@ -1,0 +1,51 @@
+@use "sass:math";
+
+@mixin before-icon($icon, $size, $color) {
+  &::before {
+    display: inline-block;
+    font-family: "icomoon";
+    content: $icon;
+    font-size: $size;
+    color: $color;
+    font-style: normal;
+    @content;
+  }
+}
+
+@mixin after-icon($icon, $size, $color) {
+  &::after {
+    display: inline-block;
+    font-family: "icomoon";
+    content: $icon;
+    font-size: $size;
+    color: $color;
+    font-style: normal;
+    @content;
+  }
+}
+
+$gutter: 24px; //Pode ser usado 16px
+
+@function calculator-rem($font-size) {
+  $size: math.div($font-size, 16);
+  @return $size + rem;
+}
+
+//System Grid
+@function grid($col, $total: 12) {
+  @return ($col / $total) * 100%;
+}
+
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: math.div($gutter, 2);
+    // float: left;
+
+    @media screen and (max-width: 960px) {
+      // float: none;
+      width: calc(100% - #{$gutter});
+      margin: math.div($gutter, 2);
+    }
+  }
+}

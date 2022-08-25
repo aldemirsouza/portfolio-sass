@@ -1,0 +1,92 @@
+.footer {
+  background-color: $tertiary-color;
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: $container-l;
+    padding: 72px 0;
+  }
+
+  &__left {
+    img {
+      width: 124px;
+      height: 124px;
+      border-radius: 50%;
+      border: 4px solid $secondary-color;
+    }
+
+    h4 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: $gray-800;
+      margin-top: 12px;
+    }
+
+    span {
+      display: block;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 120%;
+      color: $gray-500;
+      margin-top: 12px;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 120%;
+      color: $gray-500;
+      margin-top: 24px;
+    }
+
+    &--social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+
+      .social-icon {
+        width: 57px;
+        height: 57px;
+        background-color: $primary-color;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5s ease;
+
+        &:hover{
+          transform: translateY(-5px);
+
+          &:before{
+            color: $secondary-color;
+          }
+        }
+      }
+
+      .instagram {
+        transition: 0.5s ease;
+        @include before-icon("\e924", 28px, $gray-800) {
+        }
+      }
+
+      .github {
+        transition: 0.5s ease;
+        @include before-icon("\e91b", 28px, $gray-800) {
+        }
+      }
+      
+      .twitter {
+        transition: 0.5s ease;
+        @include before-icon("\e937", 28px, $gray-800) {
+        }
+      }
+    }
+  }
+}

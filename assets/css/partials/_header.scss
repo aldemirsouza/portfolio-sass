@@ -1,0 +1,70 @@
+
+// .container.header{
+//   &::after{
+//     display: none;
+//   }
+// }
+
+.container.header{
+  flex-direction: row;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+
+  &__logo {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: $tertiary-color;
+
+    &--lio {
+      color: $secondary-color;
+    }
+  }
+
+  &__nav {
+    &--menu {
+      display: flex;
+      align-items: center;
+
+      &-link {
+        margin-right: 24px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: calculator-rem(18);
+        line-height: 120%;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          transition: 0.5s ease;
+
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    .icon-sun {
+      @include before-icon("\e935", 24px, $secondary-color) {
+        margin-left: 32px;
+        cursor: pointer;
+      }
+      transition: 0.5s;
+    }
+  }
+}

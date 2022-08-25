@@ -1,0 +1,293 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  margin-top: calculator-rem(64);
+
+  &__headline {
+    width: 48%;
+
+    h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 120%;
+      color: $black-dark;
+    }
+
+    p {
+      margin-top: calculator-rem(48);
+      font-style: normal;
+      font-weight: 500;
+      font-size: calculator-rem(18);
+      line-height: 120%;
+      color: $gray-300;
+
+      img {
+        display: inline-block;
+        max-width: 32px;
+      }
+    }
+
+    &--wrapper {
+      margin-top: calculator-rem(48);
+      display: flex;
+    }
+  }
+
+  &__image {
+    // width: 48%;
+  }
+
+  &__email {
+    display: flex;
+    align-items: flex-end;
+
+    a {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: $complementary-color;
+      transition: 0.3s ease;
+
+      writing-mode: vertical-lr;
+
+      position: relative;
+
+      &:hover {
+        color: $secondary-color;
+      }
+
+      &::after {
+        content: url(../images/line-email.png);
+        position: absolute;
+        display: block;
+        left: 16%;
+        bottom: -175px;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.container.hero {
+  flex-direction: row;
+}
+
+.arrow-down {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+
+  .icon-arrow-down {
+    @include before-icon("\e90a", 32px, $tertiary-color) {
+      margin-left: 32px;
+      cursor: pointer;
+    }
+
+    animation: animated-arrow 0.8s ease infinite alternate;
+  }
+}
+
+.skills-content {
+  margin: 124px auto;
+  max-width: $container-l;
+
+  &--wrapper {
+    padding: 0 16px;
+
+    .section-description {
+      width: 60%;
+      font-style: normal;
+      font-weight: 500;
+      font-size: calculator-rem(18);
+      line-height: 120%;
+      color: $gray-400;
+      margin-top: 32px;
+    }
+
+    h3 {
+      margin-top: 72px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 120%;
+      color: $tertiary-color;
+    }
+  }
+
+  &__card-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    &--item {
+      background-color: $gray-800;
+      padding: 0 38px 24px 38px;
+
+      &--wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .figma {
+          @include after-icon("\e917", 32px, $secondary-color) {
+          }
+        }
+
+        .code {
+          @include after-icon("\e90d", 32px, $secondary-color) {
+          }
+        }
+
+        .star {
+          @include after-icon("\e934", 32px, $secondary-color) {
+          }
+        }
+
+        .icon-arrow-down {
+          @include after-icon("\e902", 24px, $primary-color) {
+            display: block;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 18px;
+          }
+        }
+      }
+
+      h4 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        color: $tertiary-color;
+        margin-top: 12px;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        color: $gray-300;
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+.experience-content {
+  &__card-content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    &--item {
+      padding: 37px 44px;
+      background-color: $gray-800;
+
+      &--wrapper {
+        position: relative;
+
+        .experience-circle {
+          width: 29px;
+          height: 29px;
+          background-color: $tertiary-color;
+          opacity: 0.3;
+          border-radius: 50%;
+        }
+
+        .experience-icon {
+          position: absolute;
+          top: -48%;
+          left: 3.4%;
+        }
+
+        .monitor {
+          @include before-icon("\e92b", 32px, $tertiary-color) {
+          }
+        }
+
+        .figma {
+          @include before-icon("\e917", 32px, $tertiary-color) {
+            font-weight: bold;
+          }
+        }
+      }
+
+      h4 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 120%;
+        color: $tertiary-color;
+        margin-top: 40px;
+      }
+
+      &--agencia {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 120%;
+        color: $tertiary-color;
+        margin-top: 16px;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+        color: $gray-300;
+        margin-top: 24px;
+      }
+
+      &--date {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 120%;
+        color: $gray-300;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+.portfolio {
+  margin: 124px auto;
+  max-width: $container-l;
+
+  &__cards {
+    display: flex;
+
+    &--wrapper {
+      margin-top: 40px;
+
+      img {
+        width: 100%;
+        height: 285px;
+        object-fit: cover;
+      }
+
+      h3 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        color: $gray-400;
+        margin-top: 32px;
+      }
+
+      strong {
+        display: block;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 120%;
+        color: $gray-500;
+        margin-top: 16px;
+      }
+    }
+  }
+}
